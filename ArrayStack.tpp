@@ -2,7 +2,7 @@ template <typename T>
 ArrayStack<T>::ArrayStack(int i) {
     // TODO
     this->maxSize = i;
-    this->buffer = new T[maxSize]; 
+    this->buffer = new T[maxSize]; // to make space on the heap for the array
     this->length = 0;
 }
 

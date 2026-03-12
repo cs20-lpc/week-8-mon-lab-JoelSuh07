@@ -9,7 +9,7 @@ template <typename T>
 class ArrayStack : public Stack<T> {
     private:
         // an array that contains the elements
-        T* buffer;
+        T* buffer; // pointer that points to very first element
 
         // the maximum number of elements in the stack
         int maxSize;
