@@ -39,12 +39,10 @@ void ArrayStack<T>::copy(const ArrayStack<T>& copyObj) {
     this->maxSize = copyObj.maxSize; //assigning value
     this->length = copyObj.length; // assigning value
 
-    this->buffer = new T[maxSize];
-    int i;
-    this->buffer[i] = copyObj.buffer[i];
+    this->buffer = new T[maxSize]; // allocating memory
 
-    for(int newSize = 0; newSize < maxSize; ++newsize){
-        buffer[newSize] = copyObj.buffer[newSize];
+    for(int newSize = 0; newSize < maxSize; ++newSize){
+        this->buffer[newSize] = copyObj.buffer[newSize];
     }
     
 
@@ -110,11 +108,10 @@ void ArrayStack<T>::rotate(typename Stack<T>::Direction dir) {
     }
     buffer[0] = temp;
 }
-
-    if (dir == Stack<T>::LEFT) {
+    else if (dir == Stack<T>::LEFT) {
     T temp = buffer[0]; //saves bottom element
 
-    for (int j = 0; j < this->length; ++j){ //loop starts from bottom
+    for (int j = 0; j < this->length - 1; ++j){ //loop starts from bottom
         buffer[j] = buffer[j+1];
     }
     buffer[this->length - 1] = temp; //puts temp at the top
